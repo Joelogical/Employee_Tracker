@@ -30,31 +30,28 @@ function returnNullSalary(x) {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   let totalSalary = 0;
-  
-  for (let i = 0; i < employeesArray.length; i++){
-    console.log(employeesArray[i].salary)
-    totalSalary += employeesArray[i].salary
+
+  for (let i = 0; i < employeesArray.length; i++) {
+    console.log(employeesArray[i].salary);
+    totalSalary += employeesArray[i].salary;
   }
-  console.log(totalSalary)
-  const averageSalary = (totalSalary/employeesArray.length);
-  const averageSalaryLog = `The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalary.toFixed(2)}`
-  console.log(averageSalaryLog)
+  console.log(totalSalary);
+  const averageSalary = totalSalary / employeesArray.length;
+  const averageSalaryLog = `The average employee salary between our ${
+    employeesArray.length
+  } employee(s) is $${averageSalary.toFixed(2)}`;
+  console.log(averageSalaryLog);
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
-
-  // random number
-  // between 0 and how many employees you have
-  // need a template literal FOR THAT PHRASE
-  // needs to incorporate first and last name (employee object)
-  // employeesArray[i].firstName
-  // employeesArray[i].lastName
-  // in this case [i] will = randomNumber utilizing math.random between 0 and employeesArray.length -1
-  // dont need a for loop
-  // dont be a fucking bitch, youre gonna die anyways
-  // remember to assign randomNumber into a variable, use it to find the index, get the proporties 
+  const randomNumber = Math.floor(Math.random() * (employeesArray.length));
+  const randomEmployee = employeesArray[randomNumber];
+  const firstName = randomEmployee.firstName;
+  const lastName = randomEmployee.lastName;
+  console.log(
+    `Congratulations to ${firstName} ${lastName}, our random drawing winner!`
+  );
 };
 
 /*
